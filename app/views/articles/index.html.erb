@@ -1,8 +1,14 @@
 <h1>Welcome to all articles pages</h1>
+
+<%= link_to "Create a New Article", new_article_path %>
 <% @articles.each do |article| %>
     <h2><%= link_to article.title, article_path(article), class: 'article_title'%></h2>
     <p><%=article.body%></p><br>
-<%end%>
+    <%= link_to "Edit this post", edit_article_path(article.id)%><br>
+    <%= link_to "Delete this post", article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
-<%= link_to "Create a New Article", new_article_path %>
+
+
+
 

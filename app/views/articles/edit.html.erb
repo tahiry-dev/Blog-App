@@ -1,0 +1,22 @@
+<h1>Please Edit your page here</h1>
+
+<%= form_for(@article) do |form| %>
+  
+  <div class="label">
+    <%= form.label :Your_Title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="message">
+    <%= form.label :Your_Message %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to "<< Back to Articles List", articles_path %>
